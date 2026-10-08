@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kebijakan Privasi — Generator CV & Surat Lamaran Kerja</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --brand: #2F8BD2;
+    --brand-dark: #1E6DAA;
+    --text: #1F2937;
+    --text-muted: #5B6472;
+    --bg: #F7F9FC;
+    --card-bg: #FFFFFF;
+    --border: #E3E8F0;
+    box-sizing: border-box;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --text: #E8EAED;
+      --text-muted: #A0A8B4;
+      --bg: #12161C;
+      --card-bg: #1A1F27;
+      --border: #2A313C;
+    }
+  }
+  :root[data-theme="dark"] {
+    --text: #E8EAED;
+    --text-muted: #A0A8B4;
+    --bg: #12161C;
+    --card-bg: #1A1F27;
+    --border: #2A313C;
+  }
+
+  html { scroll-padding-top: env(safe-area-inset-top, 0px); }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .hero {
+    background: linear-gradient(135deg, var(--brand) 0%, var(--brand-dark) 100%);
+    padding: 56px 24px 72px;
+    text-align: center;
+    color: #ffffff;
+    padding-top: calc(56px + env(safe-area-inset-top, 0px));
+  }
+
+  .hero-icon {
+    width: 64px;
+    height: 64px;
+    background: rgba(255,255,255,0.18);
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-size: 30px;
+  }
+
+  .hero h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(22px, 5vw, 30px);
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+
+  .hero p {
+    font-size: 15px;
+    opacity: 0.92;
+  }
+
+  .container {
+    max-width: 720px;
+    margin: -40px auto 0;
+    padding: 0 20px 60px;
+    position: relative;
+  }
+
+  .card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 36px 32px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.06);
+  }
+
+  .updated-badge {
+    display: inline-block;
+    font-size: 13px;
+    color: var(--text-muted);
+    background: var(--bg);
+    border: 1px solid var(--border);
+    padding: 6px 14px;
+    border-radius: 100px;
+    margin-bottom: 28px;
+  }
+
+  section { margin-bottom: 32px; }
+  section:last-child { margin-bottom: 0; }
+
+  h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--brand-dark);
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) h2 { color: #6FB8E8; }
+  }
+  :root[data-theme="dark"] h2 { color: #6FB8E8; }
+
+  h2 .num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 26px;
+    background: var(--brand);
+    color: white;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  p { color: var(--text); font-size: 15px; margin-bottom: 10px; }
+  p.muted { color: var(--text-muted); }
+
+  ul { margin: 10px 0 10px 4px; padding-left: 20px; }
+  li { margin-bottom: 6px; font-size: 15px; }
+
+  .highlight {
+    background: rgba(47, 139, 210, 0.08);
+    border-left: 3px solid var(--brand);
+    padding: 14px 16px;
+    border-radius: 10px;
+    font-size: 14.5px;
+    margin: 14px 0;
+  }
+
+  strong { font-weight: 600; }
+
+  a { color: var(--brand); text-decoration: none; border-bottom: 1px solid rgba(47,139,210,0.3); }
+  a:hover { border-bottom-color: var(--brand); }
+
+  .contact-box {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 20px;
+    margin-top: 12px;
+  }
+  .contact-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    font-size: 14.5px;
+    border-bottom: 1px solid var(--border);
+  }
+  .contact-row:last-child { border-bottom: none; }
+  .contact-label { color: var(--text-muted); }
+
+  footer {
+    text-align: center;
+    padding: 28px 20px 40px;
+    color: var(--text-muted);
+    font-size: 13px;
+  }
+
+  @media (max-width: 480px) {
+    .card { padding: 28px 20px; border-radius: 16px; }
+    .contact-row { flex-direction: column; gap: 2px; }
+  }
+</style>
+</head>
+<body>
+
+  <div class="hero">
+    <div class="hero-icon">📄</div>
+    <h1>Kebijakan Privasi</h1>
+    <p>Generator CV &amp; Surat Lamaran Kerja</p>
+  </div>
+
+  <div class="container">
+    <div class="card">
+      <span class="updated-badge">Terakhir diperbarui: <strong>[ISI TANGGAL]</strong></span>
+
+      <section>
+        <h2><span class="num">1</span> Pendahuluan</h2>
+        <p>Kebijakan Privasi ini menjelaskan bagaimana aplikasi <strong>Generator CV &amp; Surat Lamaran Kerja</strong> ("Aplikasi", "kami") mengumpulkan, menggunakan, dan melindungi informasi Anda saat menggunakan Aplikasi ini.</p>
+        <p>Dengan menggunakan Aplikasi ini, Anda menyetujui pengumpulan dan penggunaan informasi sesuai kebijakan ini.</p>
+      </section>
+
+      <section>
+        <h2><span class="num">2</span> Data yang Kami Kumpulkan</h2>
+        <p><strong>2.1 Data yang Anda Masukkan Sendiri</strong></p>
+        <p>Aplikasi ini meminta Anda mengisi data pribadi untuk keperluan pembuatan CV dan surat lamaran kerja, meliputi:</p>
+        <ul>
+          <li>Nama lengkap</li>
+          <li>Alamat</li>
+          <li>Nomor telepon</li>
+          <li>Alamat email</li>
+          <li>Riwayat pendidikan</li>
+          <li>Riwayat pengalaman kerja</li>
+          <li>Keahlian</li>
+        </ul>
+        <div class="highlight">
+          <strong>Penting:</strong> Seluruh data ini <strong>disimpan hanya di perangkat Anda sendiri</strong> (penyimpanan lokal/SQLite), dan <strong>tidak pernah dikirim, diunggah, atau disimpan di server kami atau pihak ketiga manapun</strong>. Kami tidak memiliki akses ke data yang Anda masukkan.
+        </div>
+
+        <p style="margin-top:20px"><strong>2.2 Data yang Dikumpulkan Otomatis (Iklan)</strong></p>
+        <p>Aplikasi ini menggunakan layanan <strong>Google AdMob</strong> untuk menampilkan iklan. Google AdMob dapat mengumpulkan data berikut melalui SDK-nya:</p>
+        <ul>
+          <li>Advertising ID (ID iklan perangkat)</li>
+          <li>Alamat IP</li>
+          <li>Informasi perangkat (model, sistem operasi, bahasa)</li>
+          <li>Data interaksi dengan iklan (klik, waktu tayang)</li>
+        </ul>
+        <p class="muted">Data ini dikumpulkan dan diproses oleh Google sesuai dengan <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Kebijakan Privasi Google</a> dan <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">Kebijakan Privasi Partner Google</a>. Kami tidak memiliki kendali langsung atas data yang dikumpulkan Google melalui SDK AdMob.</p>
+      </section>
+
+      <section>
+        <h2><span class="num">3</span> Bagaimana Kami Menggunakan Data</h2>
+        <ul>
+          <li>Data pribadi yang Anda masukkan <strong>hanya digunakan untuk membuat dokumen PDF</strong> (CV dan surat lamaran) yang Anda minta, dan diproses sepenuhnya di perangkat Anda.</li>
+          <li>Data dari AdMob digunakan oleh Google untuk menampilkan iklan yang relevan dan mengukur performa iklan.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2><span class="num">4</span> Berbagi Data dengan Pihak Ketiga</h2>
+        <p>Kami <strong>tidak menjual, menyewakan, atau membagikan</strong> data pribadi yang Anda masukkan ke pihak ketiga manapun.</p>
+        <p>Satu-satunya pihak ketiga yang terlibat adalah <strong>Google AdMob</strong>, yang mengumpulkan data secara independen sesuai kebijakan privasi mereka sendiri untuk keperluan penayangan iklan.</p>
+      </section>
+
+      <section>
+        <h2><span class="num">5</span> Penyimpanan dan Keamanan Data</h2>
+        <ul>
+          <li>Data pribadi Anda tersimpan secara lokal menggunakan database SQLite yang terenkripsi pada tingkat sistem operasi perangkat Anda.</li>
+          <li>File PDF yang dihasilkan disimpan di penyimpanan lokal perangkat Anda dan hanya dibagikan ketika Anda secara aktif memilih membagikannya (melalui fitur share bawaan sistem).</li>
+          <li>Karena data tidak pernah meninggalkan perangkat Anda (kecuali data iklan oleh AdMob), risiko kebocoran data dari sisi server tidak berlaku.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2><span class="num">6</span> Hak Anda atas Data</h2>
+        <p>Karena seluruh data pribadi tersimpan lokal di perangkat Anda:</p>
+        <ul>
+          <li>Anda dapat <strong>menghapus seluruh data kapan saja</strong> melalui: Pengaturan perangkat → Aplikasi → [Nama Aplikasi] → Hapus Data/Uninstall aplikasi.</li>
+          <li>Kami tidak menyimpan data Anda di server, sehingga tidak ada permintaan "hapus data" yang perlu diajukan ke kami — menghapus aplikasi sudah menghapus seluruh data pribadi Anda.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2><span class="num">7</span> Privasi Anak</h2>
+        <p>Aplikasi ini tidak ditujukan untuk anak-anak di bawah usia 13 tahun, dan kami tidak secara sengaja mengumpulkan data pribadi dari anak-anak di bawah usia tersebut.</p>
+      </section>
+
+      <section>
+        <h2><span class="num">8</span> Izin Aplikasi (Permissions)</h2>
+        <p>Aplikasi ini meminta izin berikut pada perangkat Anda:</p>
+        <ul>
+          <li><strong>Akses Internet</strong> — diperlukan untuk menampilkan iklan AdMob</li>
+          <li><strong>Penyimpanan</strong> — diperlukan untuk menyimpan dan membagikan file PDF yang dihasilkan</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2><span class="num">9</span> Perubahan Kebijakan Privasi</h2>
+        <p>Kami dapat memperbarui Kebijakan Privasi ini dari waktu ke waktu. Perubahan akan diumumkan melalui pembaruan pada halaman ini dengan tanggal "Terakhir diperbarui" yang baru.</p>
+      </section>
+
+      <section>
+        <h2><span class="num">10</span> Kontak Kami</h2>
+        <p>Jika Anda memiliki pertanyaan mengenai Kebijakan Privasi ini, silakan hubungi:</p>
+        <div class="contact-box">
+          <div class="contact-row">
+            <span class="contact-label">Email</span>
+            <span><strong>[ISI EMAIL KONTAK ANDA]</strong></span>
+          </div>
+          <div class="contact-row">
+            <span class="contact-label">Nama Developer</span>
+            <span><strong>[ISI NAMA DEVELOPER/PERUSAHAAN]</strong></span>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <footer>
+      © <span id="year"></span> Generator CV &amp; Surat Lamaran Kerja. Seluruh hak dilindungi.
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
